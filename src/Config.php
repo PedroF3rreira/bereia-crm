@@ -1,6 +1,6 @@
 <?php 
 
-define("ROOT_URL", "http://localhost/beriea");
+define("ROOT_URL", "http://localhost/bereia-crm/");
 define("SITE", "A.d Bereia");
 
 //conexão com banco de dados datalayer

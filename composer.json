@@ -19,8 +19,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "coffeecode/router": "^1.0",
-        "coffeecode/datalayer": "^1.1",
+        "coffeecode/router": "2.0.*",
+        "coffeecode/datalayer": "2.0.*",
         "league/plates": "3.*"
     }
 }

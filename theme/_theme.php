@@ -26,20 +26,39 @@
 	</header>
 	<div class="root-layout">
 		<div class="content ">
-			<h1><?=SITE;?></h1>
 			<?=$this->section('content'); ?>
 		</div>
 		<aside class="sidebar">
-				<h3>dashboard</h3>
-				<form style="display:flex;">
-					<input type="text" name="nome" placeholder="busque aquio">
-					<input type="submit" value="buscar">
+				<h3>admin menu</h3>
+				<form class="search-form">
+					<input type="text" name="search" placeholder="pequisar">
+					<button type="submit"><span class="material-symbols-sharp">search</span></button>
 				</form>
-				<ul>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
+				<ul class="menu-sidebar">
+					<li>
+						<a href="#">Menbros </a>
+						<span class="material-symbols-sharp">
+							chevron_right
+						</span>
+					</li>
+					<li>
+						<a href="#">Administração </a>
+						<span class="material-symbols-sharp">
+							chevron_right
+						</span>
+					</li>
+					<li>
+						<a href="#">Estudos </a>
+						<span class="material-symbols-sharp">
+							chevron_right
+						</span>
+					</li>
+					<li>
+						<a href="#">Calendário </a>
+						<span class="material-symbols-sharp">
+							chevron_right
+						</span>
+					</li>
 				</ul>
 			
 		</aside>
