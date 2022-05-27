@@ -11,18 +11,23 @@ class Web
 
 	function __construct($router)
 	{
+		$_SESSION['usuario'] = "Pedro Daniel";
 		$this->router = $router;
 		$this->view = new Engine(__DIR__."/../../theme", "php");
+		
+		if(!isset($_SESSION['usuario'])){
+			$this->router->redirect("login");
+		}
 	}
 
 	public function home($data)
 	{
 
-		$menbers = (new Menber())->find()->fetch(true);
+		$menbers_number = (new Menber())->find->count();
 
 		echo $this->view->render('home', [
 			'title' => 'home | bereia',
-			'menbers' => $menbers
+			'menbers_number' => $menbers_number
 		]);
 	}
 

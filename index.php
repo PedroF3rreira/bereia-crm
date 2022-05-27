@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 require "vendor/autoload.php";
 
 use CoffeeCode\Router\Router;
@@ -19,6 +21,10 @@ $router->get("/contato","Web:contact");
 $router->get("/cadastro","Web:add");
 $router->post("/cadastro","Web:add");
 
+$router->group('login');
+$router->get('/',function(){
+	echo "pagina login";
+});
 
 //define grupo rota de erros
 $router->group("opss");
