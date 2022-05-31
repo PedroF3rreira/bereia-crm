@@ -22,9 +22,9 @@ $router->get("/cadastro","Web:add");
 $router->post("/cadastro","Web:add");
 
 $router->group('login');
-$router->get('/',function(){
-	echo "pagina login";
-});
+$router->get('/',"Login:login");
+$router->post('/',"Login:login");
+$router->get('/sair',"Login:logout");
 
 //define grupo rota de erros
 $router->group("opss");
