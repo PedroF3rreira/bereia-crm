@@ -16,16 +16,18 @@ class Login
 		$this->view = new Engine(__DIR__."/../../theme", "php");
 	}
 
-	public function Login($data)
+	public function login($data)
 	{
 		if(!empty($data)){
-			if(LoginHelp::singin($data['user_name']) !== ''){
+			if(LoginHelp::singin($data['user_name'],$data['password']) !== ''){
+			
 				echo $this->router->redirect('/');
 			}
 			else{
 				echo $this->router->redirect('/login');
 			}
 		}
+		
 		echo $this->view->render('login');
 	}
 
@@ -37,5 +39,10 @@ class Login
 		}
 
 		$this->router->redirect('/');
+	}
+
+	public function singup($data)
+	{
+		echo $this->view->render('register');
 	}
 }

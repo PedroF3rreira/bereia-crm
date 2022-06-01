@@ -8,11 +8,13 @@ use CoffeeCode\Router\Router;
 
 $router = new Router(ROOT_URL);
 
-//caminho namespace do controllers
+//caminho namespace dos controllers
 $router->namespace("Source\App");
 
 
 //definindo grupo padão de rotas
+
+//grupo padao controller WEB
 $router->group(null);
 $router->get("/","Web:home");
 $router->post("/contato","Web:contact");
@@ -21,10 +23,13 @@ $router->get("/contato","Web:contact");
 $router->get("/cadastro","Web:add");
 $router->post("/cadastro","Web:add");
 
-$router->group('login');
-$router->get('/',"Login:login");
-$router->post('/',"Login:login");
-$router->get('/sair',"Login:logout");
+//grupo de registro e login controller LOGIN
+$router->group("login");
+$router->get("/","Login:login");
+$router->post("/","Login:login");
+$router->get("/sair","Login:logout");
+$router->get("/registrar", "Login:singup");
+$router->get("/registrar", "Login:singup");
 
 //define grupo rota de erros
 $router->group("opss");
