@@ -42,9 +42,8 @@ class Web
 		var_dump($data);
 	}
 	
-	public function add($data)
+	public function menberRegister($data)
 	{
-		var_dump($data);
 
 		$this->view->render('cadastro',[
 			'title' => 'cadastro | bereia',
