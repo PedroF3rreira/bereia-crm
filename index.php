@@ -16,24 +16,28 @@ $router->namespace("Source\App");
 
 //grupo padao controller WEB
 $router->group(null);
-$router->get("/","Web:home");
-$router->post("/contato","Web:contact");
-$router->delete("/contato","Web:contact");
-$router->get("/contato","Web:contact");
-$router->get("/cadastro","Web:add");
-$router->post("/cadastro","Web:add");
+$router->get("/","WebController:home");
+$router->post("/contato","WebController:contact");
+$router->delete("/contato","WebController:contact");
+$router->get("/contato","WebController:contact");
+$router->get("/cadastro","WebController:add");
+$router->post("/cadastro","WebController:add");
 
 //grupo de registro e login controller LOGIN
 $router->group("login");
-$router->get("/","Login:login");
-$router->post("/","Login:login");
-$router->get("/sair","Login:logout");
-$router->get("/registrar", "Login:singup");
-$router->get("/registrar", "Login:singup");
+$router->get("/","LoginController:login");
+$router->post("/","LoginController:login");
+$router->get("/sair","LoginController:logout");
+$router->get("/registrar", "LoginController:singup");
+$router->get("/registrar", "LoginController:singup");
+
+//grupo da rota de menbros
+$router->group("menbros");
+$router->get("/registrar","MenberController:register");
 
 //define grupo rota de erros
 $router->group("opss");
-$router->get("/{errcode}","Error:notFound");
+$router->get("/{errcode}","ErrorController:notFound");
 
 //chama o dispatch para assim iniciar os redirecionamentos
 $router->dispatch();

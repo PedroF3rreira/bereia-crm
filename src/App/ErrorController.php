@@ -2,7 +2,7 @@
 namespace Source\App;
 
 
-class Error
+class ErrorController
 {
 	
 	public function notFound($data)

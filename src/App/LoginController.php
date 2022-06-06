@@ -5,7 +5,7 @@ use League\Plates\Engine;
 use Source\Models\User;
 use Source\Help\LoginHelp;
 
-class Login
+class LoginController
 {
 	private $router;
 	private $view;

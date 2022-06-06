@@ -40,7 +40,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gerenciar menbros:</h6>
-                <a class="collapse-item" href="buttons.html">Cadastrar</a>
+                <a class="collapse-item" href="<?= url().'/menbros/registrar' ?>">Cadastrar</a>
                 <a class="collapse-item" href="cards.html">Atualizar</a>
                 <a class="collapse-item" href="cards.html">Excluir</a>
                 <a class="collapse-item" href="cards.html">Relatórios</a>

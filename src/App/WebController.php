@@ -5,7 +5,7 @@ use League\Plates\Engine;
 use Source\Models\Menber;
 use Source\Help\LoginHelp;
 
-class Web
+class WebController
 {
 	private $router;
 	private $view;
