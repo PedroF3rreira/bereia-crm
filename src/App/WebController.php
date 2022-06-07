@@ -31,22 +31,4 @@ class WebController
 			'token' => $_SESSION['token']
 		]);
 	}
-
-	public function contact($data)
-	{
-		echo "Contato";
-		
-		echo $this->view->render('contato',[
-			'title' => 'Contato | bereia'
-		]);
-		var_dump($data);
-	}
-	
-	public function menberRegister($data)
-	{
-
-		$this->view->render('cadastro',[
-			'title' => 'cadastro | bereia',
-		]);
-	}
 }

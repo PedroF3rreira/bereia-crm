@@ -34,6 +34,7 @@ $router->get("/registrar", "LoginController:singup");
 //grupo da rota de menbros
 $router->group("menbros");
 $router->get("/registrar","MenberController:register");
+$router->post("/registrar","MenberController:register");
 
 //define grupo rota de erros
 $router->group("opss");

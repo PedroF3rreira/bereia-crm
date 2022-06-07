@@ -20,17 +20,40 @@ class MenberController
 		}
 	}
 
+	/**
+	 * @param  String $data 
+	 * @return void 
+	 */
 	public function register($data)
 	{
+		$flash = "";
+		$menber_exist = (new Menber())->find("cpf = :cpf","cpf={$data['cpf']}")->fetch(); 
+		
 		if(!empty($data)){
-			$m = new Menber();
-			$m->first_name = $data['first_name'];
-			$m->lsta_name = $data['last_name'];
+			if ($menber_exist === null) {
+				
+				$m = new Menber();
+				$m->full_name = $data['full_name'];
+				$m->cel = $data['cel'];
+				$m->cpf = $data['cpf'];
+				$m->email = $data['email'];
+				$m->birthday = $data['birthday'];
+				$m->type = $data['type'];
+
+				if($m->save()){
+					$flash = "Cadastro realizado com suscesso!";
+				}	
+			}
+			else{
+				$flash = "Este cpf ou email já consta no sistema";
+			}
 		}
+		
 
 		echo $this->view->render('menbers/register',[
 			'title' => 'Registrar Menbros',
-			'user_name' => $_SESSION['user_name']
+			'user_name' => $_SESSION['user_name'],
+			'flash' => $flash,
 		]);
 	}
 }

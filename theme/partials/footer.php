@@ -63,7 +63,7 @@
     jQuery(function($) {
         $("#campoData").mask("99/99/9999");
         $("#campoTelefone").mask("(99) 99999-9999");
-        $("#campoSenha").mask("***-****");
+        $("#campoCpf").mask("000.000.000-00");
     });
 </script>
 </body>

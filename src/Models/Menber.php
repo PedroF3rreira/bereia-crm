@@ -8,6 +8,6 @@ class Menber extends DataLayer
 	
 	function __construct()
 	{
-		parent::__construct('menbers',['first_name', 'last_name','birthday','type'],'id',true);
+		parent::__construct('menbers',['full_name','birthday','cpf','type'],'id',true);
 	}
 }
